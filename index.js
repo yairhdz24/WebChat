@@ -5,11 +5,12 @@ var socket = require("socket.io");
 var app = express();
 
 var server = app.listen(4000, function () {
-  console.log("Server is running on port 4000");
+  console.log("Server is running on port 8000");
 });
 
 //static files
 app.use(express.static("public"));
+// app.use(express.static("index"));
 
 // Socket settings
 var io = socket(server);

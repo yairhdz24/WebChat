@@ -1,4 +1,6 @@
-var socket = io.connect("http://localhost:4000");
+//var socket = io.connect("http://localhost:4000");
+var socket = io.connect("https://yair-webchat.netlify.app");
+
 
 // Query DOM
 var message = document.getElementById("message"),
