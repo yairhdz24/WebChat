@@ -4,9 +4,14 @@ var socket = require("socket.io");
 // Create a new express application
 var app = express();
 
-var server = app.listen(4000, function () {
-  console.log("Server is running on port 8000");
+var server = app.listen(process.env.PORT || 4000, function () {
+  console.log("Server is running on port " + (process.env.PORT || 4000));
 });
+
+
+// // var server = app.listen(4000, function () {
+// //   console.log("Server is running on port 8000");
+// // });
 
 //static files
 app.use(express.static("public"));
