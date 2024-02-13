@@ -1,21 +1,17 @@
 var express = require("express");
-var socket = require("socket.io");
+var http = require("http");
+var socketIo = require("socket.io");
 
-// Create a new express application
+// Crear una nueva aplicación express
 var app = express();
+var server = http.createServer(app);
 
-
-
-var server = app.listen(4000, function () {
-  console.log("Server is running on port 4000");
-});
+// Configurar el servidor de sockets
+var io = socketIo(server);
 
 //static files
 app.use(express.static("public"));
-// app.use(express.static("index"));
 
-// Socket settings
-var io = socket(server);
 
 io.on("connection", function (socket) {
   console.log("A user connected: " + socket.id);
